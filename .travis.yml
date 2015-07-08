@@ -7,7 +7,7 @@ rvm:
 
 env:
   global:
-    - "COVERALLS_ENDPOINT=aschwartz-429.dev.enova.com:3000"
+    - "COVERALLS_ENDPOINT=acoyle-6ad.dev.enova.com:3000"
   matrix:
     - TEST_SUITE=rspec
     - TEST_SUITE=cucumber
