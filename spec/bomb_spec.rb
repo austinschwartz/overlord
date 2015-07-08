@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 require_relative '../bomb'
 
 describe Bomb do
