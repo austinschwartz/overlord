@@ -9,5 +9,6 @@ env:
   matrix:
     - TEST_SUITE=rspec
     - TEST_SUITE=cucumber
-
+  global:
+    - "COVERALLS_ENDPOINT=aschwartz-429.dev.enova.com:3000"
 script: bundle exec $TEST_SUITE
