@@ -1,6 +1,7 @@
 require 'coveralls'
 
 Coveralls.wear!
+puts "COVERALLS LOADED :D"
 
 RSpec.configure do |config|
     config.expect_with :rspec do |expectations|
