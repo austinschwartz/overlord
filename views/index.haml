@@ -1,0 +1,51 @@
+!!!
+%html
+  %head
+    %title I am an evil overlord
+    %link{:href => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', :rel => 'stylesheet'}/
+    :css
+      a.btn {
+        color: white
+      }
+  %body
+    .container
+      .hero-unit
+        -if flash[:notice]
+          .div{class: 'alert alert-danger', role: 'alert'}
+            %span{class: 'sr-only flash'} Error:
+            = flash[:notice]
+        %p{class: 'status'} Bomb Status: #{bomb.status.to_s.split("_").join(" ")}
+        - unless bomb.exploded?
+          %img{src: 'http://gasolinelake.com/wp-content/uploads/2014/02/bomb.jpeg', height: '150px'}
+        - if !bomb.booted?
+          %p Boot me please!
+          %form{action: '/api/boot', method: 'POST'}
+            %span
+              Activation code
+              %input{type: 'text', name: 'acode', placeholder: '1234'}
+            %br
+            %span
+              Deactivation code
+              %input{type: 'text', name: 'dcode', placeholder: '0000'}
+            %button{type: 'submit', class: 'btn btn-default btn-primary'}
+              %a.btn{class: 'submit'}
+                Boot
+        - elsif !bomb.exploded?
+          - if bomb.active?
+            %form{action: '/api/deactivate', method: 'POST'}
+              %span
+                Deactivation code
+                %input{type: 'text', name: 'dcode'}
+              %button{type: 'submit', class: 'btn btn-default btn-primary'}
+                %a.btn{class: 'submit'}
+                  Deactivate
+          - else
+            %form{action: '/api/activate', method: 'POST'}
+              %span
+                Activation code
+                %input{type: 'text', name: 'acode'}
+              %button{type: 'submit', class: 'btn btn-default btn-primary'}
+                %a.btn{class: 'submit'}
+                  Activate
+        - else
+          %img{src: 'http://b-i.forbesimg.com/jamesconca/files/2013/03/Atomic-Bomb.jpg'}
