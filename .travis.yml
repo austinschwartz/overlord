@@ -7,8 +7,8 @@ rvm:
 
 env:
   matrix:
-    - TEST_SUITE=rubocop
     - TEST_SUITE=rspec
     - TEST_SUITE=cucumber
+  -"COVERALLS_ENDPOINT=aschwartz-429.dev.enova.com:3000"
 
 script: bundle exec $TEST_SUITE
