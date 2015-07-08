@@ -1,4 +1,5 @@
-## Super Villain's Detonation Device
+
+1## Super Villain's Detonation Device
 
 You've been contacted by a super villain in search of help. He says he has a great idea, and needs only your genius to bring it to completion. Turns out the idea is going to be a bomb. I mean, literally. It's a bomb. Still, he's offering equity.
 
